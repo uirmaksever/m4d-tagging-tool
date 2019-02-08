@@ -39,4 +39,3 @@ def import_tags_to_db(pd):
         )
         tags_to_import.append(single_tag)
     Tag.objects.bulk_create(tags_to_import)
-

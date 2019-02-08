@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +29,7 @@ except KeyError:
         SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0",
                  "https://sheltered-shelf-24499.herokuapp.com/",
@@ -87,12 +88,17 @@ WSGI_APPLICATION = 'untitled.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'scraped_articles'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'scraped_articles'),
+#     }
+# }
+DATABASES = {}
+with open(BASE_DIR + '\database_connection_url') as f:
+    database_connection_url = f.read().strip()
+
+DATABASES['default'] = dj_database_url.config(default=database_connection_url,conn_max_age=600)
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -139,6 +145,8 @@ DATABASES = {
 #
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

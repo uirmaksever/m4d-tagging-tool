@@ -1,1 +1,5 @@
 articles-tagging-tool-key.json
+security_key
+database_connection_url
+datadump.json
+scraped_articles

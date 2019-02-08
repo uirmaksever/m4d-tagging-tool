@@ -19,7 +19,7 @@ def convert_distinct():
 
 
 class TaggingForm(forms.ModelForm):
-    categories = forms.ChoiceField(choices=("araba", "kamyon"), widget=forms.widgets.Select)
+    categories = forms.ChoiceField(choices=convert_distinct(), widget=forms.widgets.Select)
 
     class Meta:
         model = Article2
