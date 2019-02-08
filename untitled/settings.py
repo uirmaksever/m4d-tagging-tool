@@ -21,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1*nfpf3lpjx0ok2xf2)6w2pwov(nhsb*=4qusoef#5@ytn#-5#'
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [
-    "https://propane-flow-227820.appspot.com/",
+ALLOWED_HOSTS = ["0.0.0.0",
+                 "https://sheltered-shelf-24499.herokuapp.com/",
                  "127.0.0.1",
                  ]
 
