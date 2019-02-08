@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+
+{% block single_article %}
+
+
+    <div class="container-fluid">
+
+        {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+          </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ prev }}">
+                    <div class="container"></div>
+                </a>
+            </div>
+            <div class="col-sm-8">
+            <h1>Article Details</h1>
+                <table class="table table-bordered">
+                    <tr>
+                        <td><strong>Article ID</strong></td>
+                        <td><p>{{ article_id }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Event Date: </strong></td>
+                        <td><p>{{ event_date }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Category: </strong></td>
+                        <td><p>{{ category }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Text: </strong></td>
+                        <td><p>{{ text }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Is processed?</strong></td>
+                        <td><p>{% if is_processed == True %}&#10004;{% else %}&times;{% endif %}</p></td>
+                    </tr>
+                </table>
+
+
+                <strong>Tags</strong>
+                <ul>
+
+                {% for tag in tags %}
+                    <li>{{ tag.turkish }}</li>
+                {% endfor %}
+                </ul>
+                {% if is_processed is False %}
+                    <form method="POST" class="tagging_form">
+                        {% csrf_token %}
+                        {{ tagging_form.as_table }}
+                        {{ tagging_form.name.label_tag }}
+                        <button type="submit" class="save btn btn-default">Save</button>
+                    </form>
+                    {{ tagging_form.media }}
+                {% endif %}
+                {% if is_processed is True %}
+                    <a href="{{ edit_form_link }}" class="btn btn-default">Edit Tags</a>
+                {% endif %}
+
+                <a class="btn btn-default" href={{ prev }}>Previous</a>
+                <a class="btn btn-default" href={{ next }}>Next</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ next }}">
+                    <div></div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

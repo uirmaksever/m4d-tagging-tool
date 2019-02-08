@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand mb-0 h1 text-light" href="#">Media4Democracy Article Tagging</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/articles">Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/tags">Tags</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <a href="{% url "start_tagging" %}">
+        <button class="ml-auto btn btn-success">Start Tagging!</button>
+    </a>
+</nav>

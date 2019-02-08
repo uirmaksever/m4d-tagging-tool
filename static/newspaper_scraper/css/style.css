@@ -1,0 +1,8 @@
+.next-prev-area {
+    height: 100%;
+    background-color: lightgrey;
+}
+
+.next-prev-area:hover {
+    background-color: grey;
+}

@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+
+    {% block all_articles %}
+        {% load django_tables2 %}
+        {% render_table articles_table "table_custom.html" %}
+    {% endblock %}
