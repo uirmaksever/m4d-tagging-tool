@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud_sql_proxy.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,10 +58,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/untitled/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="100" column="77" selection-start-line="100" selection-start-column="77" selection-end-line="100" selection-end-column="77" />
+            <state relative-caret-position="255">
+              <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
               <folding>
                 <element signature="e#309#318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newspaper_scraper/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,16 +124,7 @@
         <entry file="file://$PROJECT_DIR$/database_connection_url">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="152" selection-start-column="152" selection-end-column="152" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Apps/Google/Cloud SDK/google-cloud-sdk/lib/googlecloudsdk/calliope/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+              <caret selection-end-column="152" />
             </state>
           </provider>
         </entry>
@@ -193,14 +192,14 @@
         <option value="$PROJECT_DIR$/newspaper_scraper/models.py" />
         <option value="$PROJECT_DIR$/templates/all_tags.html" />
         <option value="$PROJECT_DIR$/newspaper_scraper/migrations/__init__.py" />
-        <option value="$PROJECT_DIR$/newspaper_scraper/forms.py" />
         <option value="$PROJECT_DIR$/procfile" />
         <option value="$PROJECT_DIR$/security_key" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py" />
         <option value="$PROJECT_DIR$/database_connection_url" />
-        <option value="$PROJECT_DIR$/untitled/settings.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/newspaper_scraper/forms.py" />
+        <option value="$PROJECT_DIR$/untitled/settings.py" />
       </list>
     </option>
   </component>
@@ -222,6 +221,11 @@
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="newspaper_scraper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -334,12 +338,12 @@
       <workItem from="1549416239220" duration="38603000" />
       <workItem from="1549570804423" duration="9392000" />
       <workItem from="1549588807111" duration="5414000" />
-      <workItem from="1549594317132" duration="5802000" />
+      <workItem from="1549594317132" duration="6350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166300000" />
+    <option name="totallyTimeSpent" value="166848000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,6 +356,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4878837" visible="true" weight="0.1641791" />
       <window_info id="Structure" order="1" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
@@ -359,7 +364,7 @@
       <window_info anchor="bottom" id="Heroku" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.3261105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -369,7 +374,7 @@
       <window_info anchor="bottom" id="manage.py@untitled" order="9" visible="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" weight="0.3261105" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4989339" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32936078" />
       <window_info anchor="bottom" id="App Config Tool" order="15" sideWeight="0.49946696" weight="0.32936078" />
@@ -578,16 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newspaper_scraper/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newspaper_scraper/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
@@ -666,13 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database_connection_url">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="152" selection-start-column="152" selection-end-column="152" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -680,10 +668,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_connection_url">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/untitled/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="100" column="77" selection-start-line="100" selection-start-column="77" selection-end-line="100" selection-end-column="77" />
+        <state relative-caret-position="255">
+          <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
           <folding>
             <element signature="e#309#318#0" expanded="true" />
           </folding>

@@ -95,9 +95,8 @@ WSGI_APPLICATION = 'untitled.wsgi.application'
 #     }
 # }
 DATABASES = {}
-with open(BASE_DIR + '\database_connection_url') as f:
-    database_connection_url = f.read().strip()
 
+database_connection_url = "postgres://crmffaaqpnxatv:218e3959098d633ef327483b006e85453198f909adf3cdbf18dd1a41d36827b2@ec2-54-225-237-84.compute-1.amazonaws.com:5432/dco2kcfnmi6e95"
 DATABASES['default'] = dj_database_url.config(default=database_connection_url,conn_max_age=600)
 
 # Database
