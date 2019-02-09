@@ -90,11 +90,10 @@ def show_article(request, article_id, edit=False):
                 returned_article.tags.set(form.cleaned_data["tags"])
                 returned_article.process_timestamp = timezone.now()
                 returned_article.save()
-    # TODO: Adapt form field to autocomplete
-    # TODO: Now, user should click to times to enact a change. Fix it
+
 
     return render(request, "single_article.html", article_dictionary)
-    # TODO: Build a nice good UI
+
 
 
 def show_all_articles(request):
@@ -111,12 +110,13 @@ def show_tag(request, id):
     print(returned_articles_based_on_tag)
     turkish_name = returned_tag.turkish
     return render(request, "all_articles.html", {"articles_table": table})
-    # TODO: write a good view for this
+
 
 def show_all_tags(request):
     all_tags = Tag.objects.all()
     table = TagsTable(all_tags)
     return render(request, "all_tags.html", {"tags_table": table})
+
 
 def start_tagging(request):
     first_not_processed_article = Article2.objects.filter(is_processed=False).order_by("article_id").first()

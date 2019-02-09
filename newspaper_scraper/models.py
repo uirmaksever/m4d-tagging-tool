@@ -4,9 +4,15 @@ import django_tables2 as tables
 from dal import autocomplete
 # Create your models here.
 
+# TODO: Integrate user model
+# TODO: On tagging of Article, record which user has updated
+# TODO: On article page, keyboard shortcuts for next, prev
+# TODO: On article page, swipe next-prev for mobile
+# TODO: Make mobile UI (fix header)
+# TODO: Add footer
+# TODO: Make statistics page with plot.ly
 
 class Tag(models.Model):
-    # TODO: Do all the data entry
     english = models.CharField(max_length=256)
     turkish = models.CharField(max_length=256)
     category = models.CharField(max_length=256)
@@ -20,7 +26,6 @@ class Tag(models.Model):
 
 
 class Article2(models.Model):
-    # TODO: Do all the data entry
     article_id = models.IntegerField(primary_key=True)
     category = models.TextField()
     event_date = models.DateField(default=timezone.now)

@@ -1,8 +1,58 @@
+:root {
+    --main-border-color: lightgrey;
+}
+
+body {
+    font-family: roboto;
+}
+
 .next-prev-area {
     height: 100%;
-    background-color: lightgrey;
+    background-color: var(--main-border-color);
 }
 
 .next-prev-area:hover {
-    background-color: grey;
+    background-color: var(--main-border-color);
+}
+
+table {
+    margin: 2rem auto;
+    border: var(--main-border-color) 1px solid;
+}
+
+.tags_table table {
+    margin-left: auto;
+    margin-right: auto;
+}
+thead {
+    border: var(--main-border-color) 1px solid;
+}
+
+thead th {
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+td {
+    padding: 1rem;
+}
+
+
+.pagination {
+    padding-right: 4rem;
+    padding-top: 2rem;
+    float: right;
+}
+
+.logo_text {
+    font-family: roboto slab;
+}
+
+.navigation_div {
+    height: 100%;
+}
+
+.navigation_div:hover {
+    background-color: lightgrey;
 }

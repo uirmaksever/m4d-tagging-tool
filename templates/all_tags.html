@@ -1,6 +1,9 @@
 {% extends "index.html" %}
 
+<h1>Tagd</h1>
+<div class="tags_table">
     {% block all_tags %}
         {% load django_tables2 %}
         {% render_table tags_table "table_custom.html" %}
     {% endblock %}
+</div>
