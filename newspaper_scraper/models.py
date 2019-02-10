@@ -5,15 +5,18 @@ from django.contrib.auth.models import User
 from dal import autocomplete
 # Create your models here.
 
-# TODO: Integrate user model
-# TODO: On tagging of Article, record which user has updated
+# TODO: DONE! -- Integrate user model
+# TODO: DONE! -- On tagging of Article, record which user has updated
 # TODO: On article page, keyboard shortcuts for next, prev
 # TODO: On article page, swipe next-prev for mobile
 # TODO: Make mobile UI (fix header)
 # TODO: Add footer
 # TODO: Make statistics page with plot.ly
-
-
+# TODO: Not logged in user throws an "User matching query does not exist." error now since it requires an user instance
+#       at TagRecord. Implement authentication to views and show some you should login error.
+# TODO: On edit, fix two times clicking error. Also, enable greater control over deletion
+#       and modification on TagRecords.
+# TODO: Refactor Article2 model to Article.
 class Tag(models.Model):
     english = models.CharField(max_length=256)
     turkish = models.CharField(max_length=256)

@@ -4,7 +4,7 @@ from django.template import loader
 from django.http import HttpResponse
 from . import forms
 from django.utils import timezone
-from .models import Article2, ArticlesTable, Tag, TagsTable
+from .models import Article2, ArticlesTable, Tag, TagsTable, TagRecord
 from next_prev import next_or_prev_in_order
 from django.contrib import messages
 from dal import autocomplete
@@ -88,7 +88,14 @@ def show_article(request, article_id, edit=False):
                 messages.warning(request, "You have not selected any tag for this article")
             else:
                 returned_article.is_processed = True
-                returned_article.tags.set(form.cleaned_data["tags"])
+                print(form.cleaned_data["tags"])
+                for i in form.cleaned_data["tags"].iterator():
+                    TagRecord.objects.create(
+                        article2_id=returned_article,
+                        tag_id=i,
+                        created_by=User.objects.get(username=request.user)
+                    )
+                # form.save_m2m()
                 returned_article.process_timestamp = timezone.now()
                 returned_article.save()
 
