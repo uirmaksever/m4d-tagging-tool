@@ -12,6 +12,7 @@ from dal import autocomplete
 # TODO: Add footer
 # TODO: Make statistics page with plot.ly
 
+
 class Tag(models.Model):
     english = models.CharField(max_length=256)
     turkish = models.CharField(max_length=256)

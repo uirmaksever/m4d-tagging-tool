@@ -97,7 +97,7 @@ def show_article(request, article_id, edit=False):
 
 
 def show_all_articles(request):
-    all_articles = Article2.objects.all()
+    all_articles = Article2.objects.all().order_by('-article_id')
     table = ArticlesTable(all_articles)
     table.paginate(page=request.GET.get("page", 1), per_page=10)
     return render(request, "all_articles.html", {"articles_table": table})

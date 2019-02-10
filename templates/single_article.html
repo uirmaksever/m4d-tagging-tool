@@ -16,7 +16,9 @@
         <div class="row">
             <div class="col-sm">
                 <a href="{{ prev }}">
-                    <div class="container navigation_div animated flash"></div>
+                    <div class="container navigation_div animated flash">
+                        <i class="material-icons">navigate_before</i>
+                    </div>
                 </a>
             </div>
             <div class="col-sm-8">
@@ -40,7 +42,13 @@
                     </tr>
                     <tr>
                         <td><strong>Is processed?</strong></td>
-                        <td><p>{% if is_processed == True %}&#10004;{% else %}&times;{% endif %}</p></td>
+                        <td><p>
+                            {% if is_processed == True %}
+                                <i class="material-icons">done</i>
+                                {% else %}
+                                <i class="material-icons">clear</i>
+                            {% endif %}
+                            </p></td>
                     </tr>
                 </table>
 
@@ -55,8 +63,13 @@
                 {% if is_processed is False %}
                     <form method="POST" class="tagging_form">
                         {% csrf_token %}
-                        {{ tagging_form.as_table }}
-                        {{ tagging_form.name.label_tag }}
+                        <div class="row">
+                            <div class="col-sm-6">{{ tagging_form.tags }}</div>
+                            <div class="col-sm-6">{{ tagging_form.categories }}</div>
+                        </div>
+
+
+
                         <button type="submit" class="save btn btn-default">Save</button>
                     </form>
                     {{ tagging_form.media }}
@@ -70,7 +83,9 @@
             </div>
             <div class="col-sm">
                 <a href="{{ next }}">
-                    <div class="container navigation_div animated flash"></div>
+                    <div class="container navigation_div animated flash">
+                        <i class="material-icons">navigate_next</i>
+                    </div>
                 </a>
             </div>
         </div>

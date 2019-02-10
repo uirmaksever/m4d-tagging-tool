@@ -19,18 +19,21 @@ def convert_distinct():
 
 
 class TaggingForm(forms.ModelForm):
-    categories = forms.ChoiceField(choices=convert_distinct(), widget=forms.widgets.Select)
+    categories = forms.ChoiceField(
+        choices=convert_distinct(),
+        widget= autocomplete.ModelSelect2(attrs={'class':'tagsform_category'})) #forms.widgets.Select(attrs={'class':'tagsform_category'}))
 
     class Meta:
         model = Article2
-        fields = ("categories","tags", )
+        fields = ("categories", "tags", )
         widgets = {
             "tags": autocomplete.ModelSelect2Multiple(
                 url="tag-autocomplete",
                 forward=["categories"],
                 attrs={
                     # Set some placeholder
-                    'data-placeholder': 'Autocomplete ...',
+                    'data-placeholder': 'Please select tag.',
+                    'class': 'tagsform_tag'
                 }
             )
         }
