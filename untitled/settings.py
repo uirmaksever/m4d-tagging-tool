@@ -189,3 +189,7 @@ STATIC_ROOT = 'static'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+# Indicates where user will bi redirected after successful login
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

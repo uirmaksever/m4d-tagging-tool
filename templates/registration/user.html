@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block user %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ user.get_full_name }}</td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td>{{ user.get_username }}</td>
+                </tr>
+                <tr>
+                    <td>User role</td>
+                    <td>{{ user.groups.all.0 }}</td>
+                </tr>
+                <tr>
+                    <td>E-mail address</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+            </table>
+            <a href="{% url 'password_change' %}">Change password</a>
+        </div>
+    {% endif %}
+{% endblock %}

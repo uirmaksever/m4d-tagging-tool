@@ -1,9 +1,9 @@
 {% extends "index.html" %}
 
-<h1>Articles</h1>
-<div class="articles_table">
-    {% block all_articles %}
+{% block all_articles %}
+    <h1>Articles</h1>
+    <div class="articles_table">
         {% load django_tables2 %}
         {% render_table articles_table "table_custom.html" %}
-    {% endblock %}
-</div>
+    </div>
+{% endblock %}

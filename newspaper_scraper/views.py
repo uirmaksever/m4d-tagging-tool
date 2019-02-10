@@ -8,6 +8,7 @@ from .models import Article2, ArticlesTable, Tag, TagsTable
 from next_prev import next_or_prev_in_order
 from django.contrib import messages
 from dal import autocomplete
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -137,3 +138,8 @@ class TagAutocomplete(autocomplete.Select2QuerySetView):
             qs = qs.filter(turkish__contains=self.q)
 
         return qs
+
+
+def get_user_profile(request, username):
+    user = User.objects.get(username=username)
+    return render(request, 'registration/user.html', {"user": user})

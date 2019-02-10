@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import django_tables2 as tables
+from django.contrib.auth.models import User
 from dal import autocomplete
 # Create your models here.
 
@@ -34,7 +35,7 @@ class Article2(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     is_processed = models.BooleanField(default=False)
     process_timestamp = models.DateTimeField(auto_now_add=True)
-    tags = models.ManyToManyField(Tag, blank=True)
+    tags = models.ManyToManyField(Tag, through='TagRecord', blank=True)
 
     class Meta:
         ordering = ("pk", )
@@ -42,6 +43,13 @@ class Article2(models.Model):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('show_article_url', args=[str(self.article_id)])
+
+
+class TagRecord(models.Model):
+    article2_id = models.ForeignKey(Article2, on_delete=models.CASCADE)
+    tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class ArticlesTable(tables.Table):

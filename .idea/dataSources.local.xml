@@ -9,5 +9,10 @@
       <auth-required>false</auth-required>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="dco2kcfnmi6e95@ec2-54-225-237-84.compute-1.amazonaws.com" uuid="12dd836b-81bd-4eb5-9ccf-4d3dd748a5b6">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>crmffaaqpnxatv</user-name>
+    </data-source>
   </component>
 </project>

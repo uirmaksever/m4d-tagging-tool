@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from newspaper_scraper import views
 
 urlpatterns = [
@@ -27,5 +27,7 @@ urlpatterns = [
     path('tag-autocomplete/', views.TagAutocomplete.as_view(), name="tag-autocomplete"),
     path("tags/<int:id>", views.show_tag),
     path("tags/", views.show_all_tags),
-    path("start-tagging", views.start_tagging, name="start_tagging")
+    path("start-tagging", views.start_tagging, name="start_tagging"),
+    path("users/", include('django.contrib.auth.urls'), name="users"),
+    path("users/<str:username>", views.get_user_profile)
 ]
