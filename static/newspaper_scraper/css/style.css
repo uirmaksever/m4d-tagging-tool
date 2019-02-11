@@ -63,3 +63,54 @@ td {
 .navigation_div i:hover {
     color: grey;
 }
+
+.tagging_form button {
+    width: 100%;
+}
+
+.tagging_form div {
+    margin: auto
+}
+
+.tagsform_category {
+    height: 38px!important;
+}
+
+.tagsform_category .select2-selection__rendered {
+    line-height: 38px!important;
+}
+
+.tagsform_category .select2-selection__arrow {
+    height: 38px!important;
+}
+
+.tagging_form .col-lg-10 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.page_heading {
+    padding: 20px;
+}
+
+.tagging_form .select2-container {
+    width: 100%!important;
+}
+
+nav i {
+    padding: 10px;
+    font-size: 2em!important;
+    color: white;
+}
+
+nav .btn {
+    vertical-align: text-bottom;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='100' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}

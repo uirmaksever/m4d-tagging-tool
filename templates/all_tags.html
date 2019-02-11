@@ -2,7 +2,7 @@
 
 
 {% block all_tags %}
-    <h1>Tags</h1>
+    <h1 class="page_heading">Tags</h1>
     <div class="tags_table">
         {% load django_tables2 %}
         {% render_table tags_table "table_custom.html" %}
