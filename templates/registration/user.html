@@ -2,7 +2,8 @@
 
 {% block user %}
     {% if user.is_authenticated %}
-        <div class="container">
+        <div class="container account_page_div">
+            <h2 class="page_heading">Password Change</h2>
             <table>
                 <tr>
                     <td>Name</td>
@@ -23,5 +24,7 @@
             </table>
             <a href="{% url 'password_change' %}">Change password</a>
         </div>
+    {% else %}
+        <div class="container">You are not logged in.</div>
     {% endif %}
 {% endblock %}

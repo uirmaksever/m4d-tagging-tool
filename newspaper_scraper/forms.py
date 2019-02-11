@@ -7,7 +7,7 @@ def convert_distinct():
     distinct_list = []
     model = Tag.objects.all()
     for i in model:
-        distinct_list.append(i.category)
+        distinct_list.append(i.category_turkish)
     distinct_list = list(set(distinct_list))
     a = 0
     distinct_tuple = []

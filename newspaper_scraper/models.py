@@ -17,10 +17,13 @@ from dal import autocomplete
 # TODO: On edit, fix two times clicking error. Also, enable greater control over deletion
 #       and modification on TagRecords.
 # TODO: Refactor Article2 model to Article.
+
+
 class Tag(models.Model):
     english = models.CharField(max_length=256)
     turkish = models.CharField(max_length=256)
     category = models.CharField(max_length=256)
+    category_turkish = models.CharField(max_length=256)
     slug = models.CharField(max_length=256)
 
     def __str__(self):

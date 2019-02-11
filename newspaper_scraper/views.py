@@ -137,10 +137,10 @@ class TagAutocomplete(autocomplete.Select2QuerySetView):
         # Don't forget to filter out results depending on the visitor !
         qs = Tag.objects.all()
 
-        categories = self.forwarded.get("categories", None)
+        categories = self.forwarded.get("categories_turkish", None)
 
         if categories:
-            qs = qs.filter(category=categories)
+            qs = qs.filter(category_turkish=categories)
         if self.q:
             qs = qs.filter(turkish__contains=self.q)
 
