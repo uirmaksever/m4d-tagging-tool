@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/newspaper_scraper/migrations/0002_auto_20190210_2038.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newspaper_scraper/migrations/0003_tag_category_turkish.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tagrecord_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newspaper_scraper/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newspaper_scraper/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/password_change_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_change_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/registration/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/single_article.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single_article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +80,16 @@
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="newspaper_scraper_tag: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dco2kcfnmi6e95@ec2-54-225-237-84.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dco2kcfnmi6e95: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="newspaper_scraper_tagrecord: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
     </expand>
     <select />
   </component>
@@ -89,10 +102,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/registration/user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newspaper_scraper/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+            <state relative-caret-position="323">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -100,11 +122,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/single_article.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/tagrecord_confirm_delete.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newspaper_scraper/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="142" column="54" selection-start-line="142" selection-start-column="54" selection-end-line="142" selection-end-column="54" />
+            <state relative-caret-position="203">
+              <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -122,46 +158,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://12dd836b-81bd-4eb5-9ccf-4d3dd748a5b6/database/dco2kcfnmi6e95/schema/public/table/newspaper_scraper_tag">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/password_change_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/newspaper_scraper/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="28" />
+            <state relative-caret-position="251">
+              <caret line="134" column="22" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -169,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newspaper_scraper/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="370">
+              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -181,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/untitled/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+            <state relative-caret-position="268">
+              <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
               <folding>
                 <element signature="e#632#664#0" expanded="true" />
               </folding>
@@ -205,6 +205,7 @@
       <find>(&quot;D:\Libraries\Google Drive\Media4Democracy\Press for Freedom Raporları\2018\export.xlsx&quot;)</find>
       <find>\</find>
       <find>li</find>
+      <find>tags_field</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -232,23 +233,24 @@
         <option value="$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py" />
         <option value="$PROJECT_DIR$/database_connection_url" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/single_article.html" />
         <option value="$PROJECT_DIR$/templates/all_articles.html" />
         <option value="$PROJECT_DIR$/untitled/settings.py" />
         <option value="$PROJECT_DIR$/templates/registration/change_password.html" />
-        <option value="$PROJECT_DIR$/untitled/urls.py" />
         <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/newspaper_scraper/migrations/0002_auto_20190210_2038.py" />
         <option value="$PROJECT_DIR$/templates/all_tags.html" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/registration/password_change_form.html" />
-        <option value="$PROJECT_DIR$/templates/registration/user.html" />
-        <option value="$PROJECT_DIR$/newspaper_scraper/models.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/newspaper_scraper/forms.py" />
+        <option value="$PROJECT_DIR$/templates/registration/user.html" />
+        <option value="$PROJECT_DIR$/untitled/urls.py" />
+        <option value="$PROJECT_DIR$/templates/tagrecord_confirm_delete.html" />
         <option value="$PROJECT_DIR$/newspaper_scraper/views.py" />
+        <option value="$PROJECT_DIR$/templates/single_article.html" />
+        <option value="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" />
+        <option value="$PROJECT_DIR$/newspaper_scraper/models.py" />
       </list>
     </option>
   </component>
@@ -304,13 +306,14 @@
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="newspaper_scraper" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
@@ -333,15 +336,15 @@
     <property name="settings.editor.selected.configurable" value="Heroku" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static\newspaper_scraper\css" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static\newspaper_scraper" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\newspaper_scraper" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -431,7 +434,7 @@
       <workItem from="1549570804423" duration="9392000" />
       <workItem from="1549588807111" duration="5414000" />
       <workItem from="1549594317132" duration="49419000" />
-      <workItem from="1549888765686" duration="2634000" />
+      <workItem from="1549888765686" duration="33849000" />
     </task>
     <task id="LOCAL-00001" summary="url root fix to show articles">
       <created>1549601266688</created>
@@ -475,11 +478,25 @@
       <option name="project" value="LOCAL" />
       <updated>1549844547153</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Turkish categories have been added.">
+      <created>1549891527135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549891527150</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Turkish categories fix, it was showing all the tags.">
+      <created>1549896143685</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549896143685</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212551000" />
+    <option name="totallyTimeSpent" value="243766000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -499,8 +516,8 @@
       <window_info id="Favorites" order="2" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3261105" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.3261105" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -520,11 +537,47 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32942432" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.32942432" />
+      <window_info anchor="right" id="Database" order="4" weight="0.33102345" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="url root fix to show articles" />
@@ -533,14 +586,11 @@
     <MESSAGE value="user feature enabled, templates for it have been created. article-tags m2m field moved to TagsRecord model, to save who saved it" />
     <MESSAGE value="two net items added to TODO. basic user features of django implemented. login, logout, password change, user profile templates have been added. TagRecord model created, as intermediary model between Tag and Article2." />
     <MESSAGE value="ui improvement on header. hamburger icon fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="ui improvement on header. hamburger icon fixed." />
+    <MESSAGE value="Turkish categories have been added." />
+    <MESSAGE value="Turkish categories fix, it was showing all the tags." />
+    <option name="LAST_COMMIT_MESSAGE" value="Turkish categories fix, it was showing all the tags." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/base.html" />
-    <entry file="file://$PROJECT_DIR$/templates/addurl.html" />
-    <entry file="file://$PROJECT_DIR$/newspaper_scraper/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../newspaper_scraper/venv/Lib/site-packages/tagulous/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -639,24 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DjangoModelDependency/#untitled">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DjangoModelDependency</ID>
-          <OriginalElement>#untitled</OriginalElement>
-          <nodes>
-            <node x="" y="">newspaper_scraper.models.Article2</node>
-            <node x="" y="">newspaper_scraper.models.Tag</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="109.0" y="54.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../newspaper_scraper/venv/Lib/site-packages/django_tables2/templates/django_tables2/table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
@@ -739,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/single_article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/all_articles.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -773,13 +798,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12dd836b-81bd-4eb5-9ccf-4d3dd748a5b6/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/all_tags.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -787,24 +805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newspaper_scraper/migrations/0002_auto_20190210_2038.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/password_change_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/newspaper_scraper/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -822,40 +826,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newspaper_scraper/models.py">
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/migrations/0002_auto_20190210_2038.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/migrations/0005_auto_20190211_1842.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/migrations/0004_article2_edited_by.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/migrations/0003_tag_category_turkish.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../newspaper_scraper/venv/Lib/site-packages/django/utils/autoreload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="204" selection-start-line="204" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DjangoModelDependency/#untitled">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DjangoModelDependency</ID>
+          <OriginalElement>#untitled</OriginalElement>
+          <nodes>
+            <node x="216.99999999999997" y="158.0">django.contrib.auth.models.User</node>
+            <node x="199.49999999999997" y="0.0">django.contrib.auth.models.Permission</node>
+            <node x="90.99999999999997" y="316.0">newspaper_scraper.models.TagRecord</node>
+            <node x="0.0" y="158.0">newspaper_scraper.models.Tag</node>
+            <node x="99.49999999999997" y="237.0">newspaper_scraper.models.Article2</node>
+            <node x="152.99999999999997" y="79.0">django.contrib.auth.models.Group</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="django.contrib.auth.models.User" target="django.contrib.auth.models.Group">
+              <point x="-51.25" y="-14.5" />
+              <point x="268.25" y="133.0" />
+              <point x="260.5" y="133.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="newspaper_scraper.models.TagRecord" target="django.contrib.auth.models.User">
+              <point x="78.0" y="-14.5" />
+              <point x="286.0" y="291.0" />
+              <point x="351.65277777777777" y="291.0" />
+              <point x="351.65277777777777" y="212.0" />
+              <point x="370.75" y="212.0" />
+              <point x="51.25" y="14.5" />
+            </edge>
+            <edge source="newspaper_scraper.models.Article2" target="newspaper_scraper.models.Tag">
+              <point x="-54.25" y="-14.5" />
+              <point x="153.74999999999997" y="212.0" />
+              <point x="147.75" y="212.0" />
+              <point x="49.25" y="14.5" />
+            </edge>
+            <edge source="newspaper_scraper.models.Article2" target="django.contrib.auth.models.User">
+              <point x="54.25" y="-14.5" />
+              <point x="262.25" y="212.0" />
+              <point x="268.25" y="212.0" />
+              <point x="-51.25" y="14.5" />
+            </edge>
+            <edge source="django.contrib.auth.models.User" target="django.contrib.auth.models.Permission">
+              <point x="51.25" y="-14.5" />
+              <point x="370.75" y="133.0" />
+              <point x="378.5" y="133.0" />
+              <point x="60.0" y="14.5" />
+            </edge>
+            <edge source="django.contrib.auth.models.Group" target="django.contrib.auth.models.Permission">
+              <point x="0.0" y="-14.5" />
+              <point x="-60.0" y="14.5" />
+            </edge>
+            <edge source="newspaper_scraper.models.TagRecord" target="newspaper_scraper.models.Tag">
+              <point x="-78.0" y="-14.5" />
+              <point x="129.99999999999997" y="291.0" />
+              <point x="65.90277777777777" y="291.0" />
+              <point x="65.90277777777777" y="212.0" />
+              <point x="49.25" y="212.0" />
+              <point x="-49.25" y="14.5" />
+            </edge>
+            <edge source="newspaper_scraper.models.TagRecord" target="newspaper_scraper.models.Article2">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-322.5" y="127.0" />
+          <SelectedNodes />
+          <Categories />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/newspaper_scraper/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="370">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding>
-            <element signature="e#632#664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://12dd836b-81bd-4eb5-9ccf-4d3dd748a5b6/database/dco2kcfnmi6e95/schema/public/table/newspaper_scraper_tagrecord">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -866,12 +943,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tagrecord_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/single_article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/newspaper_scraper/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="134" column="22" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://12dd836b-81bd-4eb5-9ccf-4d3dd748a5b6/database/dco2kcfnmi6e95/schema/public/table/newspaper_scraper_tagrecord">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/newspaper_scraper/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="142" column="54" selection-start-line="142" selection-start-column="54" selection-end-line="142" selection-end-column="54" />
+        <state relative-caret-position="203">
+          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

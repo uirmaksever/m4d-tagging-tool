@@ -5,10 +5,12 @@ from django.http import HttpResponse
 from . import forms
 from django.utils import timezone
 from .models import Article2, ArticlesTable, Tag, TagsTable, TagRecord
+from django.views.generic.edit import DeleteView
 from next_prev import next_or_prev_in_order
 from django.contrib import messages
 from dal import autocomplete
 from django.contrib.auth.models import User
+from django.urls import reverse
 # Create your views here.
 
 
@@ -44,7 +46,7 @@ def show_article(request, article_id, edit=False):
     eventdate_field = getattr(returned_article, "event_date")
     text_field = getattr(returned_article, "text")
     is_processed_field = getattr(returned_article, "is_processed")
-    tags_field = returned_article.tags.all()  # getattr(returned_article, "tags")
+    tagrecords_field = TagRecord.objects.filter(article2_id=article_id)  # getattr(returned_article, "tags")
     # Next-prev
     qs_filtered = Article2.objects.filter(is_processed=False)
     next_article = next_or_prev_in_order(returned_article, qs=qs_filtered, loop=True)
@@ -63,22 +65,22 @@ def show_article(request, article_id, edit=False):
         "event_date": eventdate_field,
         "text": text_field,
         "is_processed": is_processed_field,
-        "tags": tags_field,
+        "tagrecords": tagrecords_field,
         "next": next_article_url,
         "prev": prev_article_url,
         "edit_form_link": returned_article.get_absolute_url() + "edit"
     }
 
-    if edit is True:
-        returned_article.is_processed = False
-        returned_article.save()
+    # if edit is True:
+    #     returned_article.is_processed = False
+    #     returned_article.save()
 
-    if returned_article.is_processed is False:
-        form = forms.TaggingForm
-        article_dictionary["tagging_form"] = form
-    else:
-        pass
-
+    # if returned_article.is_processed is False:
+    form = forms.TaggingForm
+    article_dictionary["tagging_form"] = form
+    # else:
+    #   pass
+    print(returned_article)
     if request.method == "POST":
         form = forms.TaggingForm(request.POST)
         if form.is_valid():
@@ -89,10 +91,10 @@ def show_article(request, article_id, edit=False):
             else:
                 returned_article.is_processed = True
                 print(form.cleaned_data["tags"])
-                for i in form.cleaned_data["tags"].iterator():
+                for tag_selection in form.cleaned_data["tags"].iterator():
                     TagRecord.objects.create(
                         article2_id=returned_article,
-                        tag_id=i,
+                        tag_id=tag_selection,
                         created_by=User.objects.get(username=request.user)
                     )
                 # form.save_m2m()
@@ -134,11 +136,13 @@ def start_tagging(request):
 
 class TagAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
-        # Don't forget to filter out results depending on the visitor !
+
         qs = Tag.objects.all()
 
+        # receives selected categories from form object
         categories = self.forwarded.get("categories", None)
 
+        # filters categories here
         if categories:
             qs = qs.filter(category_turkish=categories)
         if self.q:
@@ -151,4 +155,21 @@ class TagAutocomplete(autocomplete.Select2QuerySetView):
 
 def get_user_profile(request, username):
     user = User.objects.get(username=username)
-    return render(request, 'registration/user.html', {"user": user})
+    tags_count_per_user = TagRecord.objects.filter(created_by=user).count()
+    print(tags_count_per_user)
+    return render(request, 'registration/user.html', {"user": user, "tags_count_per_user": tags_count_per_user})
+
+
+class TagRecordDelete(DeleteView):
+    model = TagRecord
+    pk_field = TagRecord._get_pk_val
+
+
+    # This function overrides default confirmation process of DeleteView, you should not go over confirmation template.
+    def get_success_url(self):
+        tag_record_id = self.kwargs["pk"]
+        deleted_tagrecord = TagRecord.objects.get(pk=tag_record_id)
+        article_id = deleted_tagrecord.article2_id_id
+        print(article_id)
+        return reverse("show_article_url", kwargs={"article_id": article_id})
+

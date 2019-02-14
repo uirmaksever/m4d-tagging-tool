@@ -54,13 +54,23 @@
 
 
                 <strong>Tags</strong>
-                <ul>
 
-                {% for tag in tags %}
-                    <li>{{ tag.turkish }}</li>
-                {% endfor %}
-                </ul>
-                {% if is_processed is False %}
+                <div class="entered_tags_list">
+                    <ul>
+                        {% for tagrecord in tagrecords %}
+                            <li>
+                                <span class="badge badge-secondary">
+                                    <p>{{ tagrecord.tag_id.turkish }}</p>
+                                    <form method="POST" action="{% url 'delete_TagRecord' pk=tagrecord.pk %}">
+                                        {% csrf_token %}
+                                        <input class="input_icon" type="submit" value="">
+                                    </form>
+                                </span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% comment %}{% if is_processed is False %}{% endcomment %}
                     <form method="POST" class="tagging_form">
                         {% csrf_token %}
                         <div class="row">
@@ -80,7 +90,7 @@
                         
                     </form>
                     {{ tagging_form.media }}
-                {% endif %}
+                {% comment %} {% endif %} {% endcomment %}
                 {% if is_processed is True %}
                     <a href="{{ edit_form_link }}" class="btn btn-alert">Edit Tags</a>
                 {% endif %}

@@ -23,6 +23,7 @@
                 </tr>
             </table>
             <a href="{% url 'password_change' %}">Change password</a>
+            <div class="tags_count_user">{{ tags_count_per_user }}</div>
         </div>
     {% else %}
         <div class="container">You are not logged in.</div>

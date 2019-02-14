@@ -14,9 +14,12 @@ from dal import autocomplete
 # TODO: Make statistics page with plot.ly
 # TODO: Not logged in user throws an "User matching query does not exist." error now since it requires an user instance
 #       at TagRecord. Implement authentication to views and show some you should login error.
-# TODO: On edit, fix two times clicking error. Also, enable greater control over deletion
-#       and modification on TagRecords.
 # TODO: Refactor Article2 model to Article.
+# TODO: DONE! On edit, fix two times clicking error. Also, enable greater control over deletion
+#       and modification on TagRecords.
+# TODO: double clicking have been cleared out, but a new flow has been selected. TagRecords are shown as badges,
+#       with deletion support. But you still have to clean the code like for things like edit button, for it you pass
+#       a variable to show_article. Things like this should be cleaned.
 
 
 class Tag(models.Model):
@@ -39,6 +42,7 @@ class Article2(models.Model):
     event_date = models.DateField(default=timezone.now)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    edited_by = models.ForeignKey(User, blank=True, null=True, on_delete=models.PROTECT)
     is_processed = models.BooleanField(default=False)
     process_timestamp = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, through='TagRecord', blank=True)
@@ -56,6 +60,9 @@ class TagRecord(models.Model):
     tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+
 
 
 class ArticlesTable(tables.Table):

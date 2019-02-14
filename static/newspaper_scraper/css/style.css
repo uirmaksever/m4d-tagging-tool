@@ -114,3 +114,41 @@ nav .btn {
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='3' stroke-linecap='square' stroke-miterlimit='100' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+
+/* Modifications in tags badges in order to enable remove icon instead of button */
+/* Rationale here is you can only delete a record with a confirmation page. To skip that, you just put */
+/* only an input element into the form, but it acts as a button */
+.input_icon {
+    background-image:url(../images/icons/remove_icon.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+.entered_tags_list ul {
+    list-style: none;
+}
+
+.entered_tags_list ul li {
+    display: inline-block;
+}
+
+.entered_tags_list .badge {
+    margin: 5px;
+    padding: 5px;
+    line-height: 0;
+}
+
+.entered_tags_list form {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.entered_tags_list p {
+    display: inline-block;
+    font-size: 1rem;
+    vertical-align: sub;
+}

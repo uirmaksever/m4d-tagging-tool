@@ -20,7 +20,8 @@ from newspaper_scraper import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("articles/<int:article_id>/", views.show_article, name="show_article_url"),
-    path("articles/<int:article_id>/edit", views.show_article, {"edit": True}, name="edit_article_tags"),
+    # path("articles/<int:article_id>/edit", views.show_article, {"edit": True}, name="edit_article_tags"),
+    path("delete/<int:pk>", views.TagRecordDelete.as_view(), name="delete_TagRecord"),
     # TODO: /edit happens on two clicks
     path("articles/", views.show_all_articles),
     path("", views.show_all_articles, name="base_url"),
