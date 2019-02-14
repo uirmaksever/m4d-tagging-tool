@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,15 +91,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newspaper_scraper/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -113,12 +102,40 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/untitled/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+              <folding>
+                <element signature="e#309#318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="52" selection-start-column="52" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-253" />
           </provider>
         </entry>
       </file>
@@ -162,30 +179,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
               <caret line="134" column="22" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/newspaper_scraper/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/untitled/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-              <folding>
-                <element signature="e#632#664#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -234,7 +227,6 @@
         <option value="$PROJECT_DIR$/database_connection_url" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/all_articles.html" />
-        <option value="$PROJECT_DIR$/untitled/settings.py" />
         <option value="$PROJECT_DIR$/templates/registration/change_password.html" />
         <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
@@ -251,6 +243,7 @@
         <option value="$PROJECT_DIR$/templates/single_article.html" />
         <option value="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" />
         <option value="$PROJECT_DIR$/newspaper_scraper/models.py" />
+        <option value="$PROJECT_DIR$/untitled/settings.py" />
       </list>
     </option>
   </component>
@@ -302,13 +295,6 @@
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="newspaper_scraper" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="newspaper_scraper" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
@@ -434,7 +420,7 @@
       <workItem from="1549570804423" duration="9392000" />
       <workItem from="1549588807111" duration="5414000" />
       <workItem from="1549594317132" duration="49419000" />
-      <workItem from="1549888765686" duration="34736000" />
+      <workItem from="1549888765686" duration="34979000" />
     </task>
     <task id="LOCAL-00001" summary="url root fix to show articles">
       <created>1549601266688</created>
@@ -499,11 +485,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550106562038</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="build failed due to a static file (/images/remove_icon.svg). installed and configured whitenoise because of this">
+      <created>1550107434791</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1550107434791</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244653000" />
+    <option name="totallyTimeSpent" value="244896000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -516,8 +509,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4878837" visible="true" weight="0.16577825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4878837" visible="true" weight="0.16577825" />
       <window_info id="Structure" order="1" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info id="Favorites" order="2" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -532,7 +526,7 @@
       <window_info anchor="bottom" id="manage.py@untitled" order="9" visible="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4989339" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32936078" />
       <window_info anchor="bottom" id="App Config Tool" order="15" sideWeight="0.49946696" weight="0.32936078" />
@@ -595,19 +589,10 @@
     <MESSAGE value="Turkish categories have been added." />
     <MESSAGE value="Turkish categories fix, it was showing all the tags." />
     <MESSAGE value="tagrecords are shown as labels." />
-    <option name="LAST_COMMIT_MESSAGE" value="tagrecords are shown as labels." />
+    <MESSAGE value="build failed due to a static file (/images/remove_icon.svg). installed and configured whitenoise because of this" />
+    <option name="LAST_COMMIT_MESSAGE" value="build failed due to a static file (/images/remove_icon.svg). installed and configured whitenoise because of this" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newspaper_scraper/venv/Lib/site-packages/tagulous/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="45" column="166" selection-start-line="45" selection-start-column="166" selection-end-line="45" selection-end-column="166" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../newspaper_scraper/venv/Lib/site-packages/django/forms/boundfield.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -733,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="52" selection-start-column="52" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -775,16 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="194" column="6" selection-start-line="194" selection-start-column="6" selection-end-line="194" selection-end-column="6" />
-          <folding>
-            <element signature="e#309#318#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,6 +970,28 @@
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+          <folding>
+            <element signature="e#309#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="52" selection-start-column="52" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253" />
       </provider>
     </entry>
   </component>
