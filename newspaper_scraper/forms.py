@@ -22,10 +22,11 @@ class TaggingForm(forms.ModelForm):
     categories = forms.ChoiceField(
         choices=convert_distinct(),
         widget= autocomplete.ModelSelect2(attrs={'class':'tagsform_category'})) #forms.widgets.Select(attrs={'class':'tagsform_category'}))
+    number_of_occurence = forms.IntegerField(initial=1)
 
     class Meta:
         model = Article2
-        fields = ("categories", "tags", )
+        fields = ("categories", "tags", "number_of_occurence")
         widgets = {
             "tags": autocomplete.ModelSelect2Multiple(
                 url="tag-autocomplete",
@@ -33,7 +34,11 @@ class TaggingForm(forms.ModelForm):
                 attrs={
                     # Set some placeholder
                     'data-placeholder': 'Please select tag.',
-                    'class': 'tagsform_tag'
+                    'class': 'tagsform_tag',
+                    'multiple': False,
+                    'selectionAdapter': 'SingleSelection',
+                    'data-maximum-selection-length': 1,
                 }
             )
         }
+

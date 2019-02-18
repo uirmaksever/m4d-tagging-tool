@@ -45,10 +45,10 @@ def show_article(request, article_id, edit=False):
     category_field = getattr(returned_article, "category")
     eventdate_field = getattr(returned_article, "event_date")
     text_field = getattr(returned_article, "text")
-    is_processed_field = getattr(returned_article, "is_processed")
+    # is_processed_field = getattr(returned_article, "is_processed")
     tagrecords_field = TagRecord.objects.filter(article2_id=article_id)  # getattr(returned_article, "tags")
     # Next-prev
-    qs_filtered = Article2.objects.filter(is_processed=False)
+    qs_filtered = Article2.objects.filter(tags__isnull=True)
     next_article = next_or_prev_in_order(returned_article, qs=qs_filtered, loop=True)
     prev_article = next_or_prev_in_order(returned_article, qs=qs_filtered, prev=True, loop=True)
     if next_article is not None:
@@ -64,7 +64,7 @@ def show_article(request, article_id, edit=False):
         "category": category_field,
         "event_date": eventdate_field,
         "text": text_field,
-        "is_processed": is_processed_field,
+        # "is_processed": is_processed_field,
         "tagrecords": tagrecords_field,
         "next": next_article_url,
         "prev": prev_article_url,
@@ -89,21 +89,22 @@ def show_article(request, article_id, edit=False):
                 # To prevent empty form submission
                 messages.warning(request, "You have not selected any tag for this article")
             else:
-                returned_article.is_processed = True
+                # returned_article.is_processed = True
                 print(form.cleaned_data["tags"])
+                print("I'm here!")
                 for tag_selection in form.cleaned_data["tags"].iterator():
                     TagRecord.objects.create(
                         article2_id=returned_article,
                         tag_id=tag_selection,
+                        number_of_occurence=form.cleaned_data["number_of_occurence"],
                         created_by=User.objects.get(username=request.user)
                     )
                 # form.save_m2m()
                 returned_article.process_timestamp = timezone.now()
                 returned_article.save()
-
-
+        else:
+            messages.warning(request, "There have been an error while submitting the record.")
     return render(request, "single_article.html", article_dictionary)
-
 
 
 def show_all_articles(request):
@@ -129,8 +130,16 @@ def show_all_tags(request):
 
 
 def start_tagging(request):
-    first_not_processed_article = Article2.objects.filter(is_processed=False).order_by("article_id").first()
-    first_not_processed_article_id = first_not_processed_article.article_id
+    import random
+    not_processed_articles = Article2.objects.filter(tags__isnull=True).order_by("article_id")
+    first_not_processed_article_id = not_processed_articles.first().article_id
+    # ids_list = []
+    # for article in empty_articles:
+    #     article_id = article.article_id
+    #     ids_list.append(article_id)
+    # print(ids_list)
+    # random.choice(ids_list)
+    # random_not_processed = random.choice(ids_list)
     return show_article(request, first_not_processed_article_id)
 
 

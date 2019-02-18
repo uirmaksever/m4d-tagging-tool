@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'newspaper_scraper.apps.NewspaperScraperConfig',
     'django_tables2',
-    'django_extensions'
+    'django_extensions',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_plotly_dash.middleware.BaseMiddleware"
 ]
 
 ROOT_URLCONF = 'untitled.urls'
@@ -195,3 +198,21 @@ django_heroku.settings(locals())
 # Indicates where user will bi redirected after successful login
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Redis settings
+ASGI_APPLICATION = 'untitled.routing.application'
+CACHES = {
+    "default": {
+         "BACKEND": "redis_cache.RedisCache",
+         "LOCATION": os.environ.get('REDIS_URL'),
+    }
+}
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379),],
+        },
+    },
+}

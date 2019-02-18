@@ -152,3 +152,9 @@ nav .btn {
     font-size: 1rem;
     vertical-align: sub;
 }
+
+.number_of_occurence {
+    padding: 10px 5px!important;
+    border-radius: 0;
+    font-size: 0.8rem;
+}

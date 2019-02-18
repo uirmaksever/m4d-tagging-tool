@@ -58,6 +58,9 @@ class Article2(models.Model):
 class TagRecord(models.Model):
     article2_id = models.ForeignKey(Article2, on_delete=models.CASCADE)
     tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    number_of_occurence = models.IntegerField(default=1)
+        # This field is to keep track of how many times this item
+        # should be counted. Came as a request of the project team.
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -72,7 +75,7 @@ class ArticlesTable(tables.Table):
     class Meta:
         model = Article2
         template_name = "django_tables2/bootstrap.html"
-
+        exclude = ("created_at", "is_processed", "process_timestamp", )
 
 class TagsTable(tables.Table):
     id = tables.Column(linkify=True)
@@ -80,3 +83,4 @@ class TagsTable(tables.Table):
     class Meta:
         model = Tag
         template_name = "django_tables2/bootstrap.html"
+        exclude = ("english", "category", "slug",)
