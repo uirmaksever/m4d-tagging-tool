@@ -73,7 +73,6 @@ PyMySQL==0.9.3
 pypiwin32==223
 python-dateutil==2.7.5
 pytz==2018.9
-pywin32==224
 PyYAML==3.13
 redis==2.10.6
 requests==2.21.0
