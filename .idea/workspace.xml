@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="das://12dd836b-81bd-4eb5-9ccf-4d3dd748a5b6/database/dco2kcfnmi6e95/schema/public/table/newspaper_scraper_tagrecord">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -86,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/untitled/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1121">
-              <caret line="202" column="29" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
+            <state relative-caret-position="181">
+              <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
               <folding>
                 <element signature="e#309#318#0" expanded="true" />
               </folding>
@@ -95,14 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/newspaper_scraper/plotly_apps.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="155">
+              <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -196,6 +193,7 @@
       <find>li</find>
       <find>tags_field</find>
       <find>1100</find>
+      <find>pywin32</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -244,6 +242,7 @@
         <option value="$PROJECT_DIR$/templates/single_article.html" />
         <option value="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" />
         <option value="$PROJECT_DIR$/newspaper_scraper/forms.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -420,7 +419,7 @@
       <workItem from="1550346030279" duration="6641000" />
       <workItem from="1550441203620" duration="595000" />
       <workItem from="1550471543792" duration="427000" />
-      <workItem from="1550476501577" duration="27585000" />
+      <workItem from="1550476501577" duration="27881000" />
     </task>
     <task id="LOCAL-00001" summary="url root fix to show articles">
       <created>1549601266688</created>
@@ -506,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550531911299</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm.&#10;Requirements.txt is refreshed.">
+      <created>1550532056939</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1550532056939</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290343000" />
+    <option name="totallyTimeSpent" value="290639000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -523,13 +529,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4878837" visible="true" weight="0.17537314" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4878837" visible="true" weight="0.17537314" />
       <window_info id="Structure" order="1" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info id="Favorites" order="2" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.3261105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -539,7 +546,7 @@
       <window_info anchor="bottom" id="manage.py@untitled" order="9" visible="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" weight="0.3261105" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4989339" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32936078" />
       <window_info anchor="bottom" id="App Config Tool" order="15" sideWeight="0.49946696" weight="0.32936078" />
@@ -619,7 +626,8 @@
     <MESSAGE value="build failed due to a static file (/images/remove_icon.svg). installed and configured whitenoise because of this" />
     <MESSAGE value="the issue was actually icon file was not added to git add properly, since it copy pasted through Explorer. Added it to commit." />
     <MESSAGE value="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm." />
-    <option name="LAST_COMMIT_MESSAGE" value="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm." />
+    <MESSAGE value="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm.&#10;Requirements.txt is refreshed." />
+    <option name="LAST_COMMIT_MESSAGE" value="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm.&#10;Requirements.txt is refreshed." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/newspaper_scraper/admin.py">
@@ -876,9 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/tagrecord_confirm_delete.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -939,16 +944,6 @@
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="202" column="29" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
-          <folding>
-            <element signature="e#309#318#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1017,6 +1012,23 @@
           <filtering enabled="true">
             <filter text="created_by_id=6" />
           </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
+          <folding>
+            <element signature="e#309#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
         </state>
       </provider>
     </entry>
