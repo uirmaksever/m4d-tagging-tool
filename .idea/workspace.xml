@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/newspaper_scraper/plotly_apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/routing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/newspaper_scraper/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/all_articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/all_articles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single_article.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single_article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -430,7 +420,7 @@
       <workItem from="1550346030279" duration="6641000" />
       <workItem from="1550441203620" duration="595000" />
       <workItem from="1550471543792" duration="427000" />
-      <workItem from="1550476501577" duration="27285000" />
+      <workItem from="1550476501577" duration="27585000" />
     </task>
     <task id="LOCAL-00001" summary="url root fix to show articles">
       <created>1549601266688</created>
@@ -509,11 +499,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550107599491</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm.">
+      <created>1550531911299</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1550531911299</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290043000" />
+    <option name="totallyTimeSpent" value="290343000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -526,14 +523,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4878837" visible="true" weight="0.17537314" />
       <window_info id="Structure" order="1" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info id="Favorites" order="2" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3261105" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -554,7 +550,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32942432" />
-      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.33102345" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.33102345" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +618,8 @@
     <MESSAGE value="tagrecords are shown as labels." />
     <MESSAGE value="build failed due to a static file (/images/remove_icon.svg). installed and configured whitenoise because of this" />
     <MESSAGE value="the issue was actually icon file was not added to git add properly, since it copy pasted through Explorer. Added it to commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="the issue was actually icon file was not added to git add properly, since it copy pasted through Explorer. Added it to commit." />
+    <MESSAGE value="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm." />
+    <option name="LAST_COMMIT_MESSAGE" value="this commit includes the featuring of redis. It was implemented for plotly, but it is still going on. Also, the project team delivered some feedback on creation of an integer field, which they and you could utilize it how many times a TagRecord selection should be counted, how many journalists are jailed, things like that. Some ui improvements, TaggingForm established in a form. Since you accept an integer to be saved with a tag, limit of numbers per selection is limited to one. But there is no default option for that since tags field is an M2M one, you passed MaxSelectionLenth attribute to TaggingForm." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/newspaper_scraper/admin.py">
