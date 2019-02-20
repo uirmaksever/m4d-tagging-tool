@@ -84,3 +84,7 @@ class TagsTable(tables.Table):
         model = Tag
         template_name = "django_tables2/bootstrap.html"
         exclude = ("english", "category", "slug",)
+
+
+# DASH APP
+

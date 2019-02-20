@@ -15,11 +15,11 @@
         {% endfor %}
         <div class="row">
             <div class="col-sm">
-                <a href="{{ prev }}">
-                    <div class="container navigation_div animated flash">
+                <div class="container navigation_div animated flash">
+                    <a href="{{ prev }}">
                         <i class="material-icons">navigate_before</i>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
             <div class="col-sm-8">
             <h1 class="page_heading">Article Details</h1>
@@ -105,12 +105,15 @@
 
             </div>
             <div class="col-sm">
-                <a href="{{ next }}">
-                    <div class="container navigation_div animated flash">
+                <div class="container navigation_div animated flash">
+                    <a href="{{ next }}">
                         <i class="material-icons">navigate_next</i>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+{#    {%load plotly_dash%}#}
+{##}
+{#    {%plotly_app name="Statistics"%}#}
 {% endblock %}

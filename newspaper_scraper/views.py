@@ -182,3 +182,5 @@ class TagRecordDelete(DeleteView):
         print(article_id)
         return reverse("show_article_url", kwargs={"article_id": article_id})
 
+def statistics(request):
+    return render(request, "statistics.html")
