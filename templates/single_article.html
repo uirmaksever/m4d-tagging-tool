@@ -71,6 +71,7 @@
                         {% endfor %}
                     </ul>
                 </div>
+
                 {% comment %}{% if is_processed is False %}{% endcomment %}
                     <form method="POST" class="tagging_form">
                         {% csrf_token %}
@@ -92,6 +93,10 @@
                                 <td>{{ tagging_form.categories }}</td>
                                 <td>{{ tagging_form.tags }}</td>
                                 <td>{{ tagging_form.number_of_occurence }}</td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
                                 <td><button type="submit" class="save btn btn-success">Save</button></td>
                             </tr>
                             </tbody>
