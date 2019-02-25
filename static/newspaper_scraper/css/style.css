@@ -158,3 +158,16 @@ nav .btn {
     border-radius: 0;
     font-size: 0.8rem;
 }
+
+.entered_tags_div, .tagging_form_div {
+    align-items: center;
+    justify-content: center;
+}
+
+.tagging_form_div th {
+    padding-left: 10px;
+}
+
+.tagging_form_div input {
+    width: 100%;
+}

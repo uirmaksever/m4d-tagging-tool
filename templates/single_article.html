@@ -6,12 +6,12 @@
     <div class="container-fluid">
 
         {% for message in messages %}
-          <div class="alert {{ message.tags }} alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            {{ message }}
-          </div>
+            <div class="alert {{ message.tags }} alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message }}
+            </div>
         {% endfor %}
         <div class="row">
             <div class="col-sm">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-            <h1 class="page_heading">Article Details</h1>
+                <h1 class="page_heading">Article Details</h1>
                 <table class="table table-bordered">
                     <tr>
                         <td><strong>Article ID</strong></td>
@@ -40,74 +40,17 @@
                         <td><strong>Text: </strong></td>
                         <td><p>{{ text }}</p></td>
                     </tr>
-{#                    <tr>#}
-{#                        <td><strong>Is processed?</strong></td>#}
-{#                        <td><p>#}
-{#                            {% if is_processed == True %}#}
-{#                                <i class="material-icons">done</i>#}
-{#                                {% else %}#}
-{#                                <i class="material-icons">clear</i>#}
-{#                            {% endif %}#}
-{#                            </p></td>#}
-{#                    </tr>#}
+                    {#                    <tr>#}
+                    {#                        <td><strong>Is processed?</strong></td>#}
+                    {#                        <td><p>#}
+                    {#                            {% if is_processed == True %}#}
+                    {#                                <i class="material-icons">done</i>#}
+                    {#                                {% else %}#}
+                    {#                                <i class="material-icons">clear</i>#}
+                    {#                            {% endif %}#}
+                    {#                            </p></td>#}
+                    {#                    </tr>#}
                 </table>
-
-
-                <strong>Tags</strong>
-
-                <div class="entered_tags_list">
-                    <ul>
-                        {% for tagrecord in tagrecords %}
-                            <li>
-                                <span class="badge badge-secondary">
-                                    <p>{{ tagrecord.tag_id.turkish }}</p>
-                                    <span class="badge badge-primary number_of_occurence">{{ tagrecord.number_of_occurence }}</span>
-                                    <form method="POST" action="{% url 'delete_TagRecord' pk=tagrecord.pk %}">
-                                        {% csrf_token %}
-                                        <input class="input_icon" type="submit" value="">
-                                    </form>
-                                </span>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                {% comment %}{% if is_processed is False %}{% endcomment %}
-                    <form method="POST" class="tagging_form">
-                        {% csrf_token %}
-                        <table>
-                            <thead>
-                                <th>
-                                    Category
-                                </th>
-                                <th>
-                                    Tags
-                                </th>
-                                <th>
-                                    How many times this record should be counted?
-                                </th>
-                                <th></th>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{{ tagging_form.categories }}</td>
-                                <td>{{ tagging_form.tags }}</td>
-                                <td>{{ tagging_form.number_of_occurence }}</td>
-
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><button type="submit" class="save btn btn-success">Save</button></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                    {{ tagging_form.media }}
-                {% comment %} {% endif %} {% endcomment %}
-                {% if is_processed is True %}
-                    <a href="{{ edit_form_link }}" class="btn btn-alert">Edit Tags</a>
-                {% endif %}
-
             </div>
             <div class="col-sm">
                 <div class="container navigation_div animated flash">
@@ -116,9 +59,94 @@
                     </a>
                 </div>
             </div>
+
+
+        </div>
+        <div class="row entered_tags_div">
+            <strong>Tags</strong>
+
+            <div class="entered_tags_list">
+                <ul>
+                    {% for tagrecord in tagrecords %}
+                        <li>
+                            <span class="badge badge-secondary">
+                                <p>{{ tagrecord.tag_id.turkish }}</p>
+                                <span class="badge badge-primary number_of_occurence">{{ tagrecord.number_of_occurence }}</span>
+                                <form method="POST" action="{% url 'delete_TagRecord' pk=tagrecord.pk %}">
+                                    {% csrf_token %}
+                                    <input class="input_icon" type="submit" value="">
+                                </form>
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row tagging_form_div">
+            {% comment %}{% if is_processed is False %}{% endcomment %}
+            <form method="POST" class="tagging_form">
+                {% csrf_token %}
+{#                <table>#}
+{#                    <thead>#}
+{#                    <th>#}
+{#                        Category#}
+{#                    </th>#}
+{#                    <th>#}
+{#                        Tags#}
+{#                    </th>#}
+{#                    <th>#}
+{#                        How many times this record should be counted?#}
+{#                    </th>#}
+{#                    <th></th>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                    <tr>#}
+{#                        <td>{{ tagging_form.categories }}</td>#}
+{#                        <td>{{ tagging_form.tags }}</td>#}
+{#                        <td>{{ tagging_form.number_of_occurence }}</td>#}
+{##}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td></td>#}
+{#                        <td>#}
+{#                            <button type="submit" class="save btn btn-success">Save</button>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    </tbody>#}
+{#                </table>#}
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Category</th>
+                            <td>{{ tagging_form.categories }}</td>
+                        </tr>
+                        <tr>
+                            <th>Tags</th>
+                            <td>{{ tagging_form.tags }}</td>
+                        </tr>
+                        <tr>
+                            <th>How many times this record should be counted?</th>
+                            <td>{{ tagging_form.number_of_occurence }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" class="save btn btn-success">Save</button></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            {{ tagging_form.media }}
+            {% comment %} {% endif %} {% endcomment %}
+            {% if is_processed is True %}
+                <a href="{{ edit_form_link }}" class="btn btn-alert">Edit Tags</a>
+            {% endif %}
+
         </div>
     </div>
-{#    {%load plotly_dash%}#}
-{##}
-{#    {%plotly_app name="Statistics"%}#}
+
+
+
+    {#    {%load plotly_dash%}#}
+    {##}
+    {#    {%plotly_app name="Statistics"%}#}
 {% endblock %}

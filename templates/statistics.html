@@ -1,4 +1,24 @@
 {% extends 'index.html' %}
 
 {% block statistics %}
+    <h1>Statistics</h1>
+    <div class="container">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Number of Processed Articles</td>
+                    <td> {{ number_of_processed_articles }}</td>
+                </tr>
+                <tr>
+                    <td>Number of Not Processed Articles</td>
+                    <td>{{ number_of_not_processed_articles }}</td>
+
+                </tr>
+                <tr>
+                    <td>Number of Articles</td>
+                    <td>{{ number_of_articles }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

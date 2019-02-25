@@ -183,4 +183,12 @@ class TagRecordDelete(DeleteView):
         return reverse("show_article_url", kwargs={"article_id": article_id})
 
 def statistics(request):
-    return render(request, "statistics.html")
+    number_of_processed_articles = Article2.objects.exclude(tagrecord__isnull=False).count()
+    number_of_not_processed_articles = Article2.objects.exclude(tagrecord__isnull=True).count()
+    number_of_articles = Article2.objects.all().count()
+    context = {
+        'number_of_processed_articles': number_of_processed_articles,
+        'number_of_not_processed_articles': number_of_not_processed_articles,
+        'number_of_articles': number_of_articles
+    }
+    return render(request, "statistics.html", context)
