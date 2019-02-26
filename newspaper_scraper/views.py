@@ -11,6 +11,9 @@ from django.contrib import messages
 from dal import autocomplete
 from django.contrib.auth.models import User
 from django.urls import reverse
+import logging
+
+logger = logging.getLogger('scraper_logger')
 # Create your views here.
 
 
@@ -91,7 +94,7 @@ def show_article(request, article_id, edit=False):
             else:
                 # returned_article.is_processed = True
                 print(form.cleaned_data["tags"])
-                print("I'm here!")
+
                 for tag_selection in form.cleaned_data["tags"].iterator():
                     TagRecord.objects.create(
                         article2_id=returned_article,
@@ -99,6 +102,10 @@ def show_article(request, article_id, edit=False):
                         number_of_occurence=form.cleaned_data["number_of_occurence"],
                         created_by=User.objects.get(username=request.user)
                     )
+                logger.info("[{}] New TagRecord entry on Article {}, by {}".format(
+                    timezone.now(),
+                    returned_article.article_id,
+                    request.user))
                 # form.save_m2m()
                 returned_article.process_timestamp = timezone.now()
                 returned_article.save()
@@ -140,6 +147,9 @@ def start_tagging(request):
     # print(ids_list)
     # random.choice(ids_list)
     # random_not_processed = random.choice(ids_list)
+    logger.info("[{}] User: {} entered into start_tagging on Article {}",format(
+        timezone.now(), request.user, first_not_processed_article_id
+    ))
     return show_article(request, first_not_processed_article_id)
 
 
@@ -180,6 +190,9 @@ class TagRecordDelete(DeleteView):
         deleted_tagrecord = TagRecord.objects.get(pk=tag_record_id)
         article_id = deleted_tagrecord.article2_id_id
         print(article_id)
+        logger.info("[{}] TagRecord {} has been deleted on Article {} by User {}".format(
+            timezone.now(), deleted_tagrecord.id, article_id, self.request.user
+        ))
         return reverse("show_article_url", kwargs={"article_id": article_id})
 
 def statistics(request):

@@ -84,26 +84,29 @@ query = """
     JOIN newspaper_scraper_article2 n on newspaper_scraper_tagrecord.article2_id_id = n.article_id
 """
 
-def get_credentials(query_file_name):
-    from oauth2client.client import OAuth2Credentials, GoogleCredentials
-    credential_file = open(query_file_name).read()
-    print(credential_file)
-    auth_client = GoogleCredentials.from_json(credential_file)
-    auth_client.get_access_token()
+# def get_credentials(query_file_name):
+#     from oauth2client.client import OAuth2Credentials, GoogleCredentials
+#     credential_file = open(query_file_name).read()
+#     print(credential_file)
+#     auth_client = GoogleCredentials.from_json(credential_file)
+#     auth_client.get_access_token()
+#
+#     return auth_client
 
-    return auth_client
 
 def push_to_sheets(query):
-    from df2gspread import df2gspread as d2g
+    import gspread
+    from gspread_dataframe import set_with_dataframe
+    from oauth2client.service_account import ServiceAccountCredentials
 
+    scope = ['https://spreadsheets.google.com/feeds',
+             'https://www.googleapis.com/auth/drive']
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('mark ok-b57241534428.json', scope)
+    gs = gspread.authorize(credentials)
+    worksheet = gs.open_by_key('1ZULxpH-U3JPkC7q7l1xeFX7Aw95l6kEnlveePAqmvh8').sheet1
+    worksheet.clear()
     query_pd = pandas.read_sql(query, connection)
-    print(query_pd)
-    credential_filename = '.gdrive_private.json'
-    spreadsheet = ('1ECpOJ1QuFGbFdszlN-W-3a1C95zD1sKtpBEJcZsXUmI')
-    sheet_name = "Automatic Push to Sheets"
+    set_with_dataframe(worksheet=worksheet, dataframe=query_pd)
+    print("Done and done")
+    connection.close()
 
-    credentials = get_credentials(credential_filename)
-    d2g.upload(query_pd, spreadsheet, wks_name=sheet_name)
-    return query_pd
-
-push_to_sheets(query)

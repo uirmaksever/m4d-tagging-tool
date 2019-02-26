@@ -92,62 +92,11 @@ WSGI_APPLICATION = 'untitled.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'scraped_articles'),
-#     }
-# }
+
 DATABASES = {}
 
 database_connection_url = "postgres://crmffaaqpnxatv:218e3959098d633ef327483b006e85453198f909adf3cdbf18dd1a41d36827b2@ec2-54-225-237-84.compute-1.amazonaws.com:5432/dco2kcfnmi6e95"
 DATABASES['default'] = dj_database_url.config(default=database_connection_url,conn_max_age=600)
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-# Install PyMySQL as mysqlclient/MySQLdb to use Django's mysqlclient adapter
-# See https://docs.djangoproject.com/en/2.1/ref/databases/#mysql-db-api-drivers
-# for more information
-# import pymysql  # noqa: 402
-# pymysql.install_as_MySQLdb()
-
-# # [START db_setup]
-# if os.getenv('GAE_APPLICATION', None):
-#     # Running on production App Engine, so connect to Google Cloud SQL using
-#     # the unix socket at /cloudsql/<your-cloudsql-connection string>
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'HOST': '/cloudsql/propane-flow-227820:us-east1:articles-tagging-tool',
-#             'USER': 'dilet',
-#             'PASSWORD': 'kronos12',
-#             'NAME': 'articles_tagging_tool',
-#             'CONN_MAX_AGE': 600,
-#         }
-#     }
-# else:
-#     # Running locally so connect to either a local MySQL instance or connect to
-#     # Cloud SQL via the proxy. To start the proxy via command line:
-#     #
-#     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
-#     #
-#     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'HOST': '127.0.0.1',
-#             'PORT': '3306',
-#             'NAME': 'articles_tagging_tool',
-#             'USER': 'dilet',
-#             'PASSWORD': 'kronos12',
-#             'CONN_MAX_AGE': 600,
-#         }
-#     }
-# # [END db_setup]
-#
-# Password validation
-# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 
 
@@ -215,4 +164,28 @@ CHANNEL_LAYERS = {
             'hosts': [('127.0.0.1', 6379),],
         },
     },
+}
+
+# LOGGING
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+    },
+    'handlers': {
+        'scraper_logger': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR + "/newspaper_scraper/backups", 'newspaper_scraper.log'),
+            'maxBytes': 1024 * 1024 * 15,  # 15MB
+            'backupCount': 10,
+        },
+    },
+    'loggers': {
+        'scraper_logger': {
+            'handlers': ['scraper_logger'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    }
 }
