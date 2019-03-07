@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="logging enabled on some view functions. a function that pushes a custom query to google sheets added.">
-      <change afterPath="$PROJECT_DIR$/newspaper_scraper/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/logs/newspaper_scraper.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/celery.py" afterDir="false" />
+    <list default="true" id="62ece70e-52d4-4533-94a2-81e5aa51d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newspaper_scraper/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/newspaper_scraper/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statistics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +139,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/logs/newspaper_scraper.log">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -338,16 +333,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static\logs" />
+      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled" />
+      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static\logs" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\untitled" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\newspaper_scraper" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\.grive_private" />
       <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static\newspaper_scraper\css" />
-      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\static" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled" />
-      <recent name="D:\Libraries\Google Drive\Media4Democracy\Data Collection Tool\untitled\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,7 +446,7 @@
       <workItem from="1551435083265" duration="12272000" />
       <workItem from="1551688360578" duration="5343000" />
       <workItem from="1551740748350" duration="22052000" />
-      <workItem from="1551882821992" duration="7110000" />
+      <workItem from="1551882821992" duration="7354000" />
     </task>
     <task id="LOCAL-00001" summary="url root fix to show articles">
       <created>1549601266688</created>
@@ -592,11 +588,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551197074241</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="logging enabled on some view functions. a function that pushes a custom query to google sheets added. statistics included (data studio)">
+      <created>1551975039304</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1551975039304</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421496000" />
+    <option name="totallyTimeSpent" value="421740000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -609,13 +612,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48553056" visible="true" weight="0.18763326" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48553056" visible="true" weight="0.18763326" />
       <window_info id="Structure" order="1" sideWeight="0.51446944" side_tool="true" weight="0.17857143" />
       <window_info id="Favorites" order="2" sideWeight="0.5121163" side_tool="true" weight="0.15938166" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.3261105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -625,7 +629,7 @@
       <window_info anchor="bottom" id="manage.py@untitled" order="9" visible="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159913" side_tool="true" weight="0.3261105" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" weight="0.3261105" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4989339" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="14" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="App Config Tool" order="15" sideWeight="0.49946696" weight="0.32936078" />
@@ -714,7 +718,8 @@
     <MESSAGE value="pushing an ugly fix on ui." />
     <MESSAGE value="tagging form under single_articles.html fixed." />
     <MESSAGE value="logging enabled on some view functions. a function that pushes a custom query to google sheets added." />
-    <option name="LAST_COMMIT_MESSAGE" value="logging enabled on some view functions. a function that pushes a custom query to google sheets added." />
+    <MESSAGE value="logging enabled on some view functions. a function that pushes a custom query to google sheets added. statistics included (data studio)" />
+    <option name="LAST_COMMIT_MESSAGE" value="logging enabled on some view functions. a function that pushes a custom query to google sheets added. statistics included (data studio)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1122,7 +1127,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/logs/newspaper_scraper.log">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
