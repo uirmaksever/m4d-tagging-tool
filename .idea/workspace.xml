@@ -81,8 +81,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
+            <state relative-caret-position="461">
+              <caret line="106" column="82" selection-start-line="106" selection-start-column="82" selection-end-line="106" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newspaper_scraper/mark ok-b57241534428.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -164,15 +173,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/single_article.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1379">
-              <caret line="144" column="10" selection-start-line="144" selection-start-column="10" selection-end-line="144" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -193,6 +193,7 @@
       <find>\</find>
       <find>push</find>
       <find>logger</find>
+      <find>exp</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -443,7 +444,7 @@
       <workItem from="1551435083265" duration="12272000" />
       <workItem from="1551688360578" duration="5343000" />
       <workItem from="1551740748350" duration="22052000" />
-      <workItem from="1551882821992" duration="8096000" />
+      <workItem from="1551882821992" duration="8974000" />
     </task>
     <task id="LOCAL-00001" summary="url root fix to show articles">
       <created>1549601266688</created>
@@ -606,11 +607,25 @@
       <option name="project" value="LOCAL" />
       <updated>1551975283648</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="source pds those located on locale created problems.">
+      <created>1551976079076</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1551976079076</updated>
+    </task>
+    <task id="LOCAL-00025" summary="source pds those located on locale created problems.">
+      <created>1551976412970</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1551976412970</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="422482000" />
+    <option name="totallyTimeSpent" value="423360000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -730,7 +745,8 @@
     <MESSAGE value="tagging form under single_articles.html fixed." />
     <MESSAGE value="logging enabled on some view functions. a function that pushes a custom query to google sheets added." />
     <MESSAGE value="logging enabled on some view functions. a function that pushes a custom query to google sheets added. statistics included (data studio)" />
-    <option name="LAST_COMMIT_MESSAGE" value="logging enabled on some view functions. a function that pushes a custom query to google sheets added. statistics included (data studio)" />
+    <MESSAGE value="source pds those located on locale created problems." />
+    <option name="LAST_COMMIT_MESSAGE" value="source pds those located on locale created problems." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -744,13 +760,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../newspaper_scraper/venv/Lib/site-packages/django/utils/autoreload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="204" selection-start-line="204" selection-end-line="204" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1137,10 +1146,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/newspaper_scraper/mark ok-b57241534428.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/newspaper_scraper/import_from_pandas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
+        <state relative-caret-position="461">
+          <caret line="106" column="82" selection-start-line="106" selection-start-column="82" selection-end-line="106" selection-end-column="82" />
         </state>
       </provider>
     </entry>
