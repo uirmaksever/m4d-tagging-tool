@@ -1,7 +1,7 @@
 # Please don't let remain any executable code in this file. It is for some handy shortcut functions you want
 # to run from time to time.
 
-from newspaper_scraper.models import Article2, Tag
+from newspaper_scraper.models import Article2, Tag, TagRecord
 import pandas
 import datetime
 import pytz
@@ -101,7 +101,7 @@ def push_to_sheets(query):
 
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('mark ok-b57241534428.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('D:/Libraries/Google Drive/Media4Democracy/Data Collection Tool/untitled/newspaper_scraper/mark ok-b57241534428.json', scope)
     gs = gspread.authorize(credentials)
     worksheet = gs.open_by_key('1ZULxpH-U3JPkC7q7l1xeFX7Aw95l6kEnlveePAqmvh8').sheet1
     worksheet.clear()
@@ -110,3 +110,16 @@ def push_to_sheets(query):
     print("Done and done")
     connection.close()
 
+push_to_sheets(query)
+# from django.db.models import Count, Min
+# all = TagRecord.objects.order_by('article2_id').values('article2_id', 'tag_id', 'id')
+# for article in Article2.objects.all():
+#     article_id = article.article_id
+#     bound_tags = TagRecord.objects\
+#         .filter(article2_id=article_id)\
+#         .values('article2_id', 'tag_id',).annotate(Count('article2_id')).filter(article2_id__count__gt=1)
+#     bound_tags = list(bound_tags)
+#     # if len(bound_tags) > 1:
+#     print(article_id, bound_tags, len(bound_tags))
+#     #else:
+#         # print('just one')

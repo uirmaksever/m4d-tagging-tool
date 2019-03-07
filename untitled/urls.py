@@ -31,5 +31,5 @@ urlpatterns = [
     path("start-tagging", views.start_tagging, name="start_tagging"),
     path("users/", include('django.contrib.auth.urls'), name="users"),
     path("users/<str:username>", views.get_user_profile),
-    path("statistics/", views.statistics)
+    path("statistics/", views.statistics, name= "statistics")
 ]

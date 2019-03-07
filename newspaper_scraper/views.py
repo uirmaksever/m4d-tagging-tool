@@ -12,6 +12,8 @@ from dal import autocomplete
 from django.contrib.auth.models import User
 from django.urls import reverse
 import logging
+from . import tasks
+from .import_from_pandas import push_to_sheets, query
 
 logger = logging.getLogger('scraper_logger')
 # Create your views here.
@@ -102,6 +104,7 @@ def show_article(request, article_id, edit=False):
                         number_of_occurence=form.cleaned_data["number_of_occurence"],
                         created_by=User.objects.get(username=request.user)
                     )
+                    tasks.task_push_to_sheets.delay()
                 logger.info("[{}] New TagRecord entry on Article {}, by {}".format(
                     timezone.now(),
                     returned_article.article_id,
@@ -204,4 +207,17 @@ def statistics(request):
         'number_of_not_processed_articles': number_of_not_processed_articles,
         'number_of_articles': number_of_articles
     }
+    from django.db.models import Count, Sum
+    import json
+    count_dict = {}
+
+    for category in Tag.objects.values_list("category_turkish").distinct():
+        articles_per_tag = Tag.objects\
+            .filter(category_turkish=category[0])\
+            .annotate(count=Count('tagrecord'))\
+            .values("turkish", "count")
+        count_dict[category] = articles_per_tag
+        print(category[0])
+    print(count_dict)
+    push_to_sheets(query)
     return render(request, "statistics.html", context)

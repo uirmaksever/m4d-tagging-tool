@@ -166,6 +166,15 @@ CHANNEL_LAYERS = {
     },
 }
 
+# CELERY
+BROKER_URL = "redis://h:pe59a45effdb080a151b089eebb88804109537097ed58b7fc15613dd3446cdfef@ec2-54-162-83-207.compute-1.amazonaws.com:31979"
+CELERY_RESULT_BACKEND = "redis://h:pe59a45effdb080a151b089eebb88804109537097ed58b7fc15613dd3446cdfef@ec2-54-162-83-207.compute-1.amazonaws.com:31979"
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+
 # LOGGING
 LOGGING = {
     'version': 1,
@@ -176,7 +185,7 @@ LOGGING = {
         'scraper_logger': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR + "/newspaper_scraper/backups", 'newspaper_scraper.log'),
+            'filename': os.path.join(BASE_DIR + "/static/logs", 'newspaper_scraper.log'),
             'maxBytes': 1024 * 1024 * 15,  # 15MB
             'backupCount': 10,
         },
@@ -189,3 +198,4 @@ LOGGING = {
         },
     }
 }
+
