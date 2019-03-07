@@ -104,7 +104,8 @@ def push_to_sheets(query):
 
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(credential_json, scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(credential_json, scope)
+
     gs = gspread.authorize(credentials)
     worksheet = gs.open_by_key('1ZULxpH-U3JPkC7q7l1xeFX7Aw95l6kEnlveePAqmvh8').sheet1
     worksheet.clear()
