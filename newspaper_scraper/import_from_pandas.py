@@ -8,10 +8,10 @@ import pytz
 from django.utils import timezone
 from django.db import connection
 
-articles_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/export_2.xlsx", )
-tags_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/tags.xlsx")
 
 def import_articles_to_db(pd):
+    articles_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/export_2.xlsx", )
+    tags_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/tags.xlsx")
     articles_to_import = []
     for article in pd.index:
         article_id = pd["article_id"][article]
@@ -101,7 +101,7 @@ def push_to_sheets(query):
 
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('D:/Libraries/Google Drive/Media4Democracy/Data Collection Tool/untitled/newspaper_scraper/mark ok-b57241534428.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('mark ok-b57241534428.json', scope)
     gs = gspread.authorize(credentials)
     worksheet = gs.open_by_key('1ZULxpH-U3JPkC7q7l1xeFX7Aw95l6kEnlveePAqmvh8').sheet1
     worksheet.clear()
@@ -110,7 +110,7 @@ def push_to_sheets(query):
     print("Done and done")
     connection.close()
 
-push_to_sheets(query)
+
 # from django.db.models import Count, Min
 # all = TagRecord.objects.order_by('article2_id').values('article2_id', 'tag_id', 'id')
 # for article in Article2.objects.all():
