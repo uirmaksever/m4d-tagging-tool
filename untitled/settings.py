@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 try:
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 except KeyError:
-    with open(BASE_DIR + '\security_key') as f:
+    with open(BASE_DIR + '/security_key') as f:
         SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -140,6 +140,11 @@ STATIC_URL = '/static/',
 STATIC_ROOT = 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Uploads
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
@@ -198,4 +203,3 @@ LOGGING = {
         },
     }
 }
-

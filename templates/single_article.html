@@ -26,7 +26,9 @@
                 <table class="table table-bordered">
                     <tr>
                         <td><strong>Article ID</strong></td>
-                        <td><p>{{ article_id }}</p></td>
+                        <td>
+                            <a href="{% url 'show_article_url' article_id %}">{{ article_id }}</a>
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Event Date: </strong></td>
@@ -37,19 +39,13 @@
                         <td><p>{{ category }}</p></td>
                     </tr>
                     <tr>
+                        <td><strong>Related Press for Freedom Report: </strong></td>
+                        <td><a href="{{ related_pff_report.file_url }}">{{ related_pff_report.name }}</a></td>
+                    </tr>
+                    <tr>
                         <td><strong>Text: </strong></td>
                         <td><p>{{ text }}</p></td>
                     </tr>
-                    {#                    <tr>#}
-                    {#                        <td><strong>Is processed?</strong></td>#}
-                    {#                        <td><p>#}
-                    {#                            {% if is_processed == True %}#}
-                    {#                                <i class="material-icons">done</i>#}
-                    {#                                {% else %}#}
-                    {#                                <i class="material-icons">clear</i>#}
-                    {#                            {% endif %}#}
-                    {#                            </p></td>#}
-                    {#                    </tr>#}
                 </table>
             </div>
             <div class="col-sm">
@@ -86,34 +82,6 @@
             {% comment %}{% if is_processed is False %}{% endcomment %}
             <form method="POST" class="tagging_form">
                 {% csrf_token %}
-{#                <table>#}
-{#                    <thead>#}
-{#                    <th>#}
-{#                        Category#}
-{#                    </th>#}
-{#                    <th>#}
-{#                        Tags#}
-{#                    </th>#}
-{#                    <th>#}
-{#                        How many times this record should be counted?#}
-{#                    </th>#}
-{#                    <th></th>#}
-{#                    </thead>#}
-{#                    <tbody>#}
-{#                    <tr>#}
-{#                        <td>{{ tagging_form.categories }}</td>#}
-{#                        <td>{{ tagging_form.tags }}</td>#}
-{#                        <td>{{ tagging_form.number_of_occurence }}</td>#}
-{##}
-{#                    </tr>#}
-{#                    <tr>#}
-{#                        <td></td>#}
-{#                        <td>#}
-{#                            <button type="submit" class="save btn btn-success">Save</button>#}
-{#                        </td>#}
-{#                    </tr>#}
-{#                    </tbody>#}
-{#                </table>#}
                 <table>
                     <tbody>
                         <tr>
@@ -129,7 +97,7 @@
                             <td>{{ tagging_form.number_of_occurence }}</td>
                         </tr>
                         <tr>
-                            <td colspan="2"><button type="submit" class="save btn btn-success">Save</button></td>
+                            <td colspan="2"><button type="submit" class="save btn btn-success" name="submit_tag_button">Save</button></td>
 
                         </tr>
                     </tbody>
@@ -142,6 +110,39 @@
             {% endif %}
 
         </div>
+
+        <div class="container">
+            <div class="comments_div card">
+                <div class="enter_comment_div card-heading">
+                    <h3>Comments</h3>
+                </div>
+
+                    <div class="show_comments_div card-body">
+                        <div class="row">
+                            <form class="comment_form" action="{% url 'create_comment_on_article' article_id %}" method="POST">
+                                {% csrf_token %}
+                                {{ comment_form }}
+                                <button type="submit" name="comment_button">Save Comment</button>
+                            </form>
+                        </div>
+
+
+                        <ul class="list-group">
+                            {% for comment in related_comments %}
+                                <li class="list-group-item"><strong>{{ comment.related_user }} says:</strong> {{ comment.comment_text }}</li>
+                            {% empty %}
+                                <p>No comment entered for this article.</p>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+
+
+            </div>
+        </div>
+
+
+
     </div>
 
 

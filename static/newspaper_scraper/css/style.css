@@ -159,7 +159,7 @@ nav .btn {
     font-size: 0.8rem;
 }
 
-.entered_tags_div, .tagging_form_div {
+.entered_tags_div, .tagging_form_div, .comments_div {
     align-items: center;
     justify-content: center;
 }

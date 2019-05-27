@@ -4,7 +4,7 @@ from django.template import loader
 from django.http import HttpResponse
 from . import forms
 from django.utils import timezone
-from .models import Article2, ArticlesTable, Tag, TagsTable, TagRecord
+from .models import Article2, ArticlesTable, Tag, TagsTable, TagRecord, PffReport, ArticleComment
 from django.views.generic.edit import DeleteView
 from next_prev import next_or_prev_in_order
 from django.contrib import messages
@@ -14,6 +14,8 @@ from django.urls import reverse
 import logging
 from . import tasks
 from .import_from_pandas import push_to_sheets, query
+import pandas
+import datetime
 
 logger = logging.getLogger('scraper_logger')
 # Create your views here.
@@ -50,6 +52,7 @@ def show_article(request, article_id, edit=False):
     category_field = getattr(returned_article, "category")
     eventdate_field = getattr(returned_article, "event_date")
     text_field = getattr(returned_article, "text")
+    related_pff_report = returned_article.related_pff_report
     # is_processed_field = getattr(returned_article, "is_processed")
     tagrecords_field = TagRecord.objects.filter(article2_id=article_id)  # getattr(returned_article, "tags")
     # Next-prev
@@ -73,7 +76,8 @@ def show_article(request, article_id, edit=False):
         "tagrecords": tagrecords_field,
         "next": next_article_url,
         "prev": prev_article_url,
-        "edit_form_link": returned_article.get_absolute_url() + "edit"
+        "edit_form_link": returned_article.get_absolute_url() + "edit",
+        "related_pff_report": related_pff_report
     }
 
     # if edit is True:
@@ -83,25 +87,31 @@ def show_article(request, article_id, edit=False):
     # if returned_article.is_processed is False:
     form = forms.TaggingForm
     article_dictionary["tagging_form"] = form
+    comment_form = forms.ArticleCommentForm
+    article_dictionary["comment_form"] = comment_form
+    related_comments = ArticleComment.objects.filter(related_article=returned_article)
+    article_dictionary["related_comments"] = related_comments
+    print(related_comments)
     # else:
     #   pass
     print(returned_article)
     if request.method == "POST":
-        form = forms.TaggingForm(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data["tags"])
-            if not form.cleaned_data["tags"]:
+        tag_form = forms.TaggingForm(request.POST)
+        comment_form = forms.ArticleCommentForm(request.POST)
+        if "submit_tag_button" in request.POST and tag_form.is_valid():
+            print(tag_form.cleaned_data["tags"])
+            if not tag_form.cleaned_data["tags"]:
                 # To prevent empty form submission
                 messages.warning(request, "You have not selected any tag for this article")
             else:
                 # returned_article.is_processed = True
-                print(form.cleaned_data["tags"])
+                print(tag_form.cleaned_data["tags"])
 
-                for tag_selection in form.cleaned_data["tags"].iterator():
+                for tag_selection in tag_form.cleaned_data["tags"].iterator():
                     TagRecord.objects.create(
                         article2_id=returned_article,
                         tag_id=tag_selection,
-                        number_of_occurence=form.cleaned_data["number_of_occurence"],
+                        number_of_occurence=tag_form.cleaned_data["number_of_occurence"],
                         created_by=User.objects.get(username=request.user)
                     )
                     tasks.task_push_to_sheets.delay()
@@ -112,6 +122,15 @@ def show_article(request, article_id, edit=False):
                 # form.save_m2m()
                 returned_article.process_timestamp = timezone.now()
                 returned_article.save()
+        if "comment_button" in request.POST and comment_form.is_valid():
+            comment = ArticleComment.objects.create(
+                related_article=returned_article,
+                related_user=request.user,
+                comment_text=comment_form.cleaned_data["comment_text"]
+            )
+            comment.save()
+            messages.success(request, "Comment saved successfully")
+            print("Comment saved.")
         else:
             messages.warning(request, "There have been an error while submitting the record.")
     return render(request, "single_article.html", article_dictionary)
@@ -123,6 +142,12 @@ def show_all_articles(request):
     table.paginate(page=request.GET.get("page", 1), per_page=10)
     return render(request, "all_articles.html", {"articles_table": table})
 
+# def create_comment(request, article_id):
+#     related_article = Article2.objects.get(pk=article_id)
+#
+#     if request.method == "POST":
+#         pass
+#     return HttpResponse("Commenting on: {}, {}".format(article_id, related_article.text))
 
 def show_tag(request, id):
     returned_tag = Tag.objects.get(id=id)
@@ -221,3 +246,26 @@ def statistics(request):
     print(count_dict)
     push_to_sheets(query)
     return render(request, "statistics.html", context)
+
+
+def import_articles_to_db(request):
+    articles_pd = pandas.read_excel("/Users/umutirmaksever/Downloads/export_edited.xlsx", )
+    # tags_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/tags.xlsx")
+    articles_to_import = []
+    for article in articles_pd.index:
+        article_id = articles_pd["import_id"][article] # You added id field manually into excel file
+        category = articles_pd["category"][article]
+        event_date = articles_pd["date_corrected"][article]
+        print("Adding {}".format(article_id))
+        event_date = datetime.datetime.date(event_date)
+        text = articles_pd["text_without_ref"][article]
+        single_article = Article2(
+            article_id=article_id,
+            category=category,
+            event_date=event_date,
+            text=text,
+            related_pff_report= PffReport.objects.get(pk=3))
+        articles_to_import.append(single_article)
+    print("Started bulk import.")
+    Article2.objects.bulk_create(articles_to_import)
+    return render(request, "upload_articles_success.html")

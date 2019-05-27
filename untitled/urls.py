@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from newspaper_scraper import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +33,10 @@ urlpatterns = [
     path("start-tagging", views.start_tagging, name="start_tagging"),
     path("users/", include('django.contrib.auth.urls'), name="users"),
     path("users/<str:username>", views.get_user_profile),
-    path("statistics/", views.statistics, name= "statistics")
+    path("statistics/", views.statistics, name= "statistics"),
+    path("enter_articles_bulk", views.import_articles_to_db),
+    path("articles/<int:article_id>/create_comment", views.show_article, name="create_comment_on_article")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

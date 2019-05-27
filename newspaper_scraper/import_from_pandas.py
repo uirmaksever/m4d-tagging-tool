@@ -9,22 +9,23 @@ from django.utils import timezone
 from django.db import connection
 
 
-def import_articles_to_db(pd):
-    articles_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/export_2.xlsx", )
-    tags_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/tags.xlsx")
+def import_articles_to_db():
+    articles_pd = pandas.read_excel("/Users/umutirmaksever/Downloads/export_edited.xlsx", )
+    # tags_pd = pandas.read_excel("D:/Libraries/Google Drive/Media4Democracy/Press for Freedom Raporları/2018/tags.xlsx")
     articles_to_import = []
-    for article in pd.index:
-        article_id = pd["article_id"][article]
-        category = pd["category"][article]
-        event_date = pd["date_corrected"][article]
+    for article in articles_pd.index:
+        # article_id = articles_pd["article_id"][article]
+        category = articles_pd["category"][article]
+        event_date = articles_pd["date_corrected"][article]
         print(type(event_date))
         event_date = datetime.datetime.date(event_date)
         text = pd["text_without_ref"][article]
         single_article = Article2(
-            article_id=article_id,
+            # article_id=article_id,
             category=category,
             event_date=event_date,
-            text=text)
+            text=text,
+            related_pff_report=3)
         articles_to_import.append(single_article)
 
     Article2.objects.bulk_create(articles_to_import)

@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import formset_factory
-from .models import Article2, Tag
+from .models import Article2, Tag, ArticleComment
 from dal import autocomplete
 
 def convert_distinct():
@@ -42,3 +42,15 @@ class TaggingForm(forms.ModelForm):
             )
         }
 
+class ArticleCommentForm(forms.ModelForm):
+
+    class Meta:
+        model = ArticleComment
+        fields = ("comment_text", )
+        widgets = {
+            'text': forms.TextInput(attrs={
+                'id': 'comment-text', 
+                'required': True,
+                'placeholder': 'Say something...'
+            }),
+        }

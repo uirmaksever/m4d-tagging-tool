@@ -21,6 +21,14 @@ from dal import autocomplete
 #       with deletion support. But you still have to clean the code like for things like edit button, for it you pass
 #       a variable to show_article. Things like this should be cleaned.
 
+class PffReport(models.Model):
+    file_url = models.URLField()
+    name = models.CharField(max_length=256)
+    month = models.IntegerField(blank=True)
+    year = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 class Tag(models.Model):
     english = models.CharField(max_length=256)
@@ -46,7 +54,7 @@ class Article2(models.Model):
     is_processed = models.BooleanField(default=False)
     process_timestamp = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, through='TagRecord', blank=True)
-
+    related_pff_report = models.ForeignKey(PffReport, on_delete=models.PROTECT)
     class Meta:
         ordering = ("pk", )
 
@@ -85,6 +93,11 @@ class TagsTable(tables.Table):
         template_name = "django_tables2/bootstrap.html"
         exclude = ("english", "category", "slug",)
 
+class ArticleComment(models.Model):
+    comment_text = models.TextField()
+    related_user = models.ForeignKey(User, on_delete=models.PROTECT)
+    related_article = models.ForeignKey(Article2, on_delete=models.PROTECT)
+    created_at = models.DateTimeField(auto_now=True)
+
 
 # DASH APP
-
