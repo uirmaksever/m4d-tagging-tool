@@ -112,33 +112,57 @@
         </div>
 
         <div class="container">
-            <div class="comments_div card">
-                <div class="enter_comment_div card-heading">
-                    <h3>Comments</h3>
+
+
+
+          <div class="row">
+            <div class="comments_div card col-lg-8 mx-auto">
+              <div class="enter_comment_div card-heading">
+                  <h3>Comments</h3>
+              </div>
+
+              <div class="show_comments_div card-body col-lg-12">
+                <div class="enter_comment">
+                    <form class="comment_form" action="{% url 'create_comment_on_article' article_id %}" method="POST">
+                      {% csrf_token %}
+                      {{ comment_form.non_field_errors }}
+                      {% for hidden_field in comment_form.hidden_fields %}
+                        {{ hidden_field.errors }}
+                        {{ hidden_field }}
+                      {% endfor %}
+                      {{ comment_form.comment_text.errors }}
+                      <div class="input-group mb-4">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="{{ comment_form.comment_text.label }}"
+                               name="{{ comment_form.comment_text.name }}"
+                               id="{{ comment_form.comment_text.name.id_for_label }}"
+                               {% if comment_form.comment_text.name.value != None %}value="{{ comment_form.comment_text.name.value|stringformat:'s' }}"{% endif %}
+                               {% if form.name.field.required %}required{% endif %}>
+                        <div class="input-group-append">
+                          <button name="comment_button" class="btn btn-outline-primary" type="submit">Add Comment</button>
+                        </div>
+                      </div>
+                    </form>
                 </div>
 
-                    <div class="show_comments_div card-body">
-                        <div class="row">
-                            <form class="comment_form" action="{% url 'create_comment_on_article' article_id %}" method="POST">
-                                {% csrf_token %}
-                                {{ comment_form }}
-                                <button type="submit" name="comment_button">Save Comment</button>
-                            </form>
-                        </div>
 
-
-                        <ul class="list-group">
-                            {% for comment in related_comments %}
-                                <li class="list-group-item"><strong>{{ comment.related_user }} says:</strong> {{ comment.comment_text }}</li>
-                            {% empty %}
-                                <p>No comment entered for this article.</p>
-                            {% endfor %}
-                        </ul>
-                    </div>
-
-
-
+                  <ul class="list-group">
+                      {% for comment in related_comments %}
+                          <li class="list-group-item">
+                            <p class="d-inline">
+                              <b>{{ comment.related_user }} says:</b>
+                              {{ comment.comment_text }}</p>
+                            <small class="float-right">{{ comment.created_at }}</small>
+                          </li>
+                      {% empty %}
+                          <p>No comment entered for this article.</p>
+                      {% endfor %}
+                  </ul>
+              </div>
             </div>
+          </div>
+
         </div>
 
 
