@@ -52,7 +52,7 @@ gspread==3.1.0
 gspread-dataframe==3.0.2
 gunicorn==19.9.0
 hiredis==1.0.0
-httplib2==0.12.1
+httplib2==0.18.0
 hyperlink==18.0.0
 idna==2.8
 incremental==17.5.0
