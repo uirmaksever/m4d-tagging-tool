@@ -27,7 +27,7 @@ df2gspread==1.0.4
 dj-database-url==0.5.0
 Django==2.1.5
 django-autocomplete-light==3.3.2
-django-debug-toolbar==1.11
+django-debug-toolbar==1.11.1
 django-extensions==2.1.5
 django-heroku==0.3.1
 django-next-prev==1.0.1
