@@ -25,7 +25,7 @@ dash-table==3.4.0
 decorator==4.3.2
 df2gspread==1.0.4
 dj-database-url==0.5.0
-Django==2.1.5
+Django==2.2.24
 django-autocomplete-light==3.3.2
 django-debug-toolbar==1.11
 django-extensions==2.1.5
